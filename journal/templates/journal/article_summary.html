@@ -1,0 +1,10 @@
+{% for article in articles %}
+    {% if article.is_published %}
+        <a class="dropdown-item drop-list" href="{% url 'article' article.id %}">{{ article.title }}</a>
+        {% if not forloop.last %}
+        <hr class="dropdown-divider" />
+        {% endif %}
+    {% elif user.is_superuser %}
+        <a class="dropdown-item drop-list" href="{% url 'draft_article' article.id %}">{{ article.title }} (draft)</a>
+    {% endif %}
+{% endfor %}

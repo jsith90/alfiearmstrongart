@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main>
+	<div class="about-page">
+		<div class="about-div">
+		<div class="about-image  fade-in">
+			<img src="{% static 'assets/alfie-about.jpeg' %}">
+		</div>
+		<figcaption class="about-text">
+			<div class="about-title fade-in">
+		<h1>About Me</h1>
+	</div>
+			<p class="fade-in">Hi there, my name is Alfie Armstrong. I’m an illustrator and character artist from Cornwall, with a degree in Illustration from Falmouth University.</p>
+			<p class="fade-in">My goal is to draw immersive worlds that trigger the viewer’s imagination. I love experimenting, but usually begin with traditional pencil art that I refine and colour digitally.</p>
+			<p class="fade-in">You can email me with enquiries at:</p> 
+			<p class="fade-in"><a href="mailto:alfiearmstrongart@outlook.com">alfiearmstrongart@outlook.com</a></p>
+			<p class="fade-in">Or find me on Instagram:</p> 
+			<p class="fade-in"><a href="https://www.instagram.com/alfarmstr/" target="_blank">@alfarmstr</a></p>
+			</figcaption>
+		
+		</div>
+	</div>
+</main>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="gallery-page">
+    <div class="article-page">
+    <div class="gallery-title">
+      <h1>{{ article.title }}</h1>
+      <pre>{{ article.date }}</pre>
+    </div>
+    <hr class="article-hr">
+    {% if article.image1 %}
+    <div class="article-image">
+      <img src="{{ article.image1.url }}" class="img-fluid modal-img" alt="{{ article.caption1 }}">
+      {% if article.caption1 %}
+      <p class="article-caption">{{ article.caption1 }}</p>
+      {% endif %}
+    </div>
+    <hr class="article-hr">
+    {% else %}
+    <div></div>
+    {% endif %}  
+    {% if article.body %}
+    <div class="body-ps">
+    <p>{{ article.body|linebreaks }}</p>
+    </div>
+    <hr class="article-hr">
+    {% else %}
+      <div></div>
+    {% endif %}
+    <div class="thumbnails row">
+      {% if article.image2 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image2.url }}" style="width:100%" alt="{{ article.caption2 }}">
+        {% if article.caption2 %}
+        <p class="article-caption">{{ article.caption2 }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if article.image3 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image3.url }}" style="width:100%" alt="{{ article.caption3 }}">
+        <p class="article-caption">{{ article.caption3 }}</p>
+      </div>
+      {% endif %}
+      {% if article.image4 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image4.url }}" style="width:100%" alt="{{ article.caption4 }}">
+        <p class="article-caption">{{ article.caption4 }}</p>
+      </div>
+      {% endif %}
+    </div>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="publish-checkbox-label">
+        <label for="{{ article_form.is_published.id_for_label }}">{{ article_form.is_published.label }}</label>
+        {{ article_form.is_published }}
+    </div>
+    <div class="buttons-div">
+      <button type="submit" class="publish-button">Publish Article</button>
+      <a href="{% url 'delete_article' article.id %}" class="delete-button">Delete Article</a>
+    </div>
+  </form>
+</main>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+  <div class="article-page">
+    <div class="gallery-title  fade-in">
+      <h1>{{ article.title }}</h1>
+      <pre>{{ article.date }}</pre>
+    </div>
+    <hr class="article-hr">
+    {% if article.image1 %}
+    <div class="article-image  fade-in">
+      <img src="{{ article.image1.url }}" class="img-fluid modal-img" alt="{{ article.caption1 }}">
+      {% if article.caption1 %}
+      <p class="article-caption">{{ article.caption1 }}</p>
+      {% endif %}
+    </div>
+    <hr class="article-hr">
+    {% else %}
+    <div></div>
+    {% endif %}  
+    {% if article.body %}
+    <div class="body-ps fade-in">
+    <p>{{ article.body|linebreaks }}</p>
+    </div>
+    <hr class="article-hr">
+    {% else %}
+      <div></div>
+    {% endif %}
+    <div class="thumbnails row fade-in">
+      {% if article.image2 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image2.url }}" style="width:100%" alt="{{ article.caption2 }}">
+        {% if article.caption2 %}
+        <p class="article-caption">{{ article.caption2 }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if article.image3 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image3.url }}" style="width:100%" alt="{{ article.caption3 }}">
+        <p class="article-caption">{{ article.caption3 }}</p>
+      </div>
+      {% endif %}
+      {% if article.image4 %}
+      <div class="column">
+        <img class="cursor modal-img" src="{{ article.image4.url }}" style="width:100%" alt="{{ article.caption4 }}">
+        <p class="article-caption">{{ article.caption4 }}</p>
+      </div>
+      {% endif %}
+    </div>
+    {% if user.is_superuser %}
+    <div class="buttons-div">
+      <a href="{% url 'delete_article' article.id %}" class="delete-button">Delete Article</a>
+    </div>
+    {% endif %}
+</main>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+  
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="thumbnails row">
+      {% if article.image1 %}
+      <div class="column">
+        <img class="demo cursor" src="{{ article.image1.url }}" style="width:100%" onclick="currentSlide({{ 1 }})" alt="{{ article.caption2 }}">
+        {% if article.caption1 %}
+        <p class="article-caption">{{ article.caption1 }}</p>
+        <hr>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if article.image2 %}
+      <div class="column">
+        <img class="demo cursor" src="{{ article.image2.url }}" style="width:100%" onclick="currentSlide({{ 2 }})" alt="{{ article.caption2 }}">
+        {% if article.caption2 %}
+        <p class="article-caption">{{ article.caption2 }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if article.image3 %}
+      <div class="column">
+        <img class="demo cursor" src="{{ article.image3.url }}" style="width:100%" onclick="currentSlide({{ 3 }})" alt="{{ article.caption3 }}">
+        <p class="article-caption">{{ article.caption3 }}</p>
+      </div>
+      {% endif %}
+      {% if article.image4 %}
+      <div class="column">
+        <img class="demo cursor" src="{{ article.image4.url }}" style="width:100%" onclick="currentSlide({{ 4 }})" alt="{{ article.caption4 }}">
+        <p class="article-caption">{{ article.caption4 }}</p>
+      </div>
+      {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+

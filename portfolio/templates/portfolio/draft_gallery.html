@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="gallery-page">
+  <div class="gallery-page">
+  <div class="gallery-title">
+    <h1>{{ gallery.title }}</h1>
+    {% if gallery.description %}
+      <p>{{ gallery.description }}.</p>
+    {% else %}
+      <div></div>
+    {% endif %}
+  </div> 
+  <div class="gallery-position"> 
+    {% for image in images %}
+      <div class="gallery-image">
+        {% if image.caption %}
+          <img src="{{ image.image.url }}" class="img-fluid modal-img" alt="{{ image.caption }}">
+          <p class="caption">{{ image.caption }}</p>
+        {% else %}
+          <img src="{{ image.image.url }}" class="img-fluid modal-img" alt="{{ gallery.title }}">
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="publish-checkbox-label">
+        <label for="{{ gallery_form.is_published.id_for_label }}">{{ gallery_form.is_published.label }}</label>
+        {{ gallery_form.is_published }}
+    </div>
+    <div class="buttons-div">
+      <button type="submit" class="publish-button">Publish Gallery</button>
+      <a href="{% url 'delete_gallery' gallery.id %}" class="delete-button">Delete Gallery</a>
+    </div>
+</form>
+</main>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="thumbnails row">
+    {% for image in images %}
+      <div class="column">
+        <img class="demo cursor" src="{{ image.image.url }}" style="width:100%" onclick="currentSlide({{ forloop.counter }})" alt="{{ image.caption }}">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

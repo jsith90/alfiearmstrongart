@@ -1,0 +1,50 @@
+{% load static %}
+        <nav class="navigation">
+            <div id="nav-content">
+                <div><img src="{% static 'assets/alfie-logo.jpg' %}"></div>
+                <a id="logo" href="{% url 'home' %}">Alfie Armstrong Art</a>
+            </div> 
+            <button class="nav-toggle">
+            <i class="fa-solid fa-briefcase"></i>
+          </button>
+            <div class="nav-links">   
+                <div class="dropdown">
+                    <button class="dropbtn">Journal
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        {% include 'journal/article_summary.html' %}
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Portfolio 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        {% include 'portfolio/gallery_summary.html' %}
+                    </div>
+                </div>
+                {% if user.is_superuser %}
+                <div class="dropdown">
+                    <button class="dropbtn">Admin
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item drop-list" href="{% url 'add_gallery' %}">Add Gallery</a></li>
+                        <hr class="dropdown-divider" />
+                        <a class="dropdown-item drop-list" href="{% url 'article_create' %}">Add Article</a></li>
+                        <hr class="dropdown-divider" />
+                        <a class="dropdown-item drop-list" aria-label="Logout of User account" href="{% url 'logout' %}" class="active">Logout</a>
+                    </div>
+                </div> 
+                {% endif %}
+                <div>   
+                    <a target="_blank" class="instagram" href="https://www.instagram.com/alfarmstr/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div>
+                    <a class="about-link" href="{% url 'about' %}">About / Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        

@@ -1,0 +1,10 @@
+{% for gallery in galleries %}
+    {% if gallery.is_published %}
+            <a class="dropdown-item drop-list" href="{% url 'gallery' gallery.id %}">{{ gallery.title }}</a>
+        {% if not forloop.last %}
+            <hr class="dropdown-divider" />
+        {% endif %}
+    {% elif user.is_superuser %}
+            <a class="dropdown-item drop-list" href="{% url 'draft_gallery' gallery.id %}">{{ gallery.title }} (draft)</a>
+    {% endif %}
+{% endfor %}
