@@ -24,7 +24,7 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY_YO')
+SECRET_KEY = os.environ['SECRET_KEY_YO']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -90,7 +90,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "railway",
         "USER": "postgres",
-        "PASSWORD": os.environ.get('DB_PASSWORD_YO'),
+        "PASSWORD": os.environ['DB_PASSWORD_YO'],
         "HOST": "monorail.proxy.rlwy.net",
         "PORT": "46288",
     }
