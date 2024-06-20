@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY_YO']
 DEBUG = True
 
 ALLOWED_HOSTS = ['alfiearmstrongart-production.up.railway.app', 'https://alfiearmstrongart-production.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['http://alfiearmstrongart-production.up.railway.app', 'https://alfiearmstrongart-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://alfiearmstrongart-production.up.railway.app']
 
 # Application definition
 
