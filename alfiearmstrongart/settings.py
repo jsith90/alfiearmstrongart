@@ -18,6 +18,11 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / 'templates'
 
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 load_dotenv()
 
 # Quick-start development settings - unsuitable for production
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'cloudinary',
     "portfolio",
     "journal",
     'whitenoise.runserver_nostatic',
@@ -139,3 +145,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# cloudinary
+
+cloudinary.config(
+    cloud_name = os.environ['CLOUD_NAME_YO'],
+    api_key = os.environ['API_KEY_YO'],
+    api_secret = os.environ['API_SECRET_YO'],
+)

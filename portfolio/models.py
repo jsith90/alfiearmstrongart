@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from cloudinary.models import CloudinaryField
 
 
 class Gallery(models.Model):
@@ -15,7 +16,7 @@ class Gallery(models.Model):
 
 class Image(models.Model):
 	gallery = models.ForeignKey(Gallery, related_name='image', on_delete=models.CASCADE)
-	image = models.ImageField(upload_to='uploads/works/')
+	image = CloudinaryField('image', blank=True, null=True)
 	caption = models.CharField(max_length=200, blank=True, null=True)
 
 	def __str__(self):
