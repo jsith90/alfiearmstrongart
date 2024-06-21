@@ -1,15 +1,20 @@
 // enable hidden nav bar
 const nav = document.querySelector('.navigation');
 const navY = nav.offsetHeight;
+const footer = document.getElementById("footer");
+const footerY = nav.offsetHeight;
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  if(pageYOffset >= navY && lastScrollY < window.scrollY) {
+  if (pageYOffset >= navY && lastScrollY < window.scrollY) {
+    // If current scroll position is greater than or equal to navY and scrolling down,
+    // add 'nav--hidden' class to hide the navigation bar.
     nav.classList.add('nav--hidden');
-  } else {
-    nav.classList.remove('nav--hidden');
-  }
+  } else if (lastScrollY - 7 > window.scrollY) {
+      nav.classList.remove('nav--hidden');
+    }
 
+  // Update the last scroll position to the current scroll position.
   lastScrollY = window.scrollY;
 });
 
