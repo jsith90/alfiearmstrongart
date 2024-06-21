@@ -190,8 +190,9 @@ p, label, button, a {
 }
 
 a:hover, .dropdown:hover .dropbtn {
-  background-color: #ffd8d8;
+  background-color: #ff7070;
   color: black;
+  box-shadow: black 6px 6px 1px 1px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -199,7 +200,7 @@ a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content .drop-list:hover {
-	background-color: #ffd8d8;
+	background-color: #ff7070;
 }
 
 /* gallery upload page  */
@@ -266,9 +267,17 @@ a:hover, .dropdown:hover .dropbtn {
 .about-text p a {
 	text-decoration: none;
 	font-weight: bold;
-	padding: 0 20px 0 0;
+	padding: 10px 10px 10px 10px;
 	color: black;
 	margin-bottom: 10px;
+	background: #ffde7f;
+  box-shadow: 3px 3px black;
+}
+
+.about-text p a:hover {
+	background-color: #ff7070;
+  color: black;
+  box-shadow: black 6px 6px 1px 1px;
 }
 
 /* galleries */
@@ -285,17 +294,19 @@ a:hover, .dropdown:hover .dropbtn {
 .gallery-title h1 {
 	text-align: center;
 	letter-spacing: 2.5px;
+	margin-bottom: 20px;
 }
 
 .gallery-title p {
 	font-size: 20px;
-	font-weight: 600;
-	letter-spacing: 3px;
+	font-weight: 700;
+	letter-spacing: 2px;
 	padding: 10px 20px 10px 20px;
-	background-color: #FAEECC;
+	background-color: #ffde7f;
 	color: black;
 	margin-bottom: 10px;
 	border-radius: 10.5px;
+	box-shadow: #000000 7px 8px 0px 0px;
 }
 
 .gallery-page {
@@ -544,6 +555,7 @@ a:hover, .dropdown:hover .dropbtn {
 	color: black;
 	font-style: oblique;
 	background-color: green;
+	box-shadow: black 6px 6px 1px 1px;
 }
 
 .delete-button {
@@ -996,6 +1008,12 @@ a:hover, .dropdown:hover .dropbtn {
 
 	#logo, .gallery-title h1 {
 		font-size: 1.2rem;
+		margin-bottom: 10px;
+	}
+
+	.gallery-title p {
+		font-size: 0.8rem;
+		letter-spacing: 0.8px;
 	}
 
 	.dropdown .dropbtn {  
@@ -1046,7 +1064,7 @@ a:hover, .dropdown:hover .dropbtn {
 	}
 
 	.gallery-title p {
-        font-size: 0.6rem;
+        font-size: 0.99rem;
    }
 
    .prev {
