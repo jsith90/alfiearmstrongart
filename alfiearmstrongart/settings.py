@@ -27,7 +27,7 @@ load_dotenv()
 SECRET_KEY = os.environ['SECRET_KEY_YO']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = ['alfiearmstrongart-production.up.railway.app', 'https://alfiearmstrongart-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://alfiearmstrongart-production.up.railway.app']
