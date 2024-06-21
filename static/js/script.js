@@ -1,9 +1,10 @@
 // enable hidden nav bar
 const nav = document.querySelector('.navigation');
+const navY = nav.offsetHeight;
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  if(lastScrollY < window.scrollY) {
+  if(pageYOffset >= navY && lastScrollY < window.scrollY) {
     nav.classList.add('nav--hidden');
   } else {
     nav.classList.remove('nav--hidden');

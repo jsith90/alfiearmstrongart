@@ -33,7 +33,7 @@ p, label, button, a {
 /* navbar */
 
 .navigation {
-	transition: transform 0.5s;
+	transition: transform 1s;
 	display: flex;
   align-items: center;
   justify-content: space-between;
@@ -826,11 +826,22 @@ a:hover, .dropdown:hover .dropbtn {
 
 }
 
-@media only screen and (max-width: 1093px) {
+@media only screen and (max-width: 1193px) {
 	.gallery-position {
-		margin: 30px 7px 30px 7px;
+		margin: 30px 0 30px 0;
+    padding: 5px 5px 5px 5px;
 	}
 
+}
+
+@media only screen and (max-width: 1129px) {
+	.gallery-image {
+		width: 430px;
+	}
+
+}
+
+@media only screen and (max-width: 1093px) {
 	.navigation {
 		flex-direction: column;
 	}
@@ -865,16 +876,15 @@ a:hover, .dropdown:hover .dropbtn {
 		position: unset;
 	}
 
+	.gallery-image {
+		width: 312px;
+	}
+
 }
 
 @media only screen and (max-width: 880px) {
 	.gallery-position {
 		margin: 30px 7px 30px 7px;
-	}
-
-	.gallery-image {
-		width: 80%;
-		border-radius: 0.25rem;
 	}
 
 	.modal-content {
@@ -891,6 +901,12 @@ a:hover, .dropdown:hover .dropbtn {
   	font-size: 40px;
 	}
 
+}
+
+@media screen and (max-width: 767px) {
+	.gallery-image{
+		width: 90%;
+	}
 }
 
 @media screen and (min-width: 668px) {
@@ -1005,7 +1021,7 @@ a:hover, .dropdown:hover .dropbtn {
 	}
 
 	.gallery-position {
-		margin-top: 50px;
+		margin-top: 25px;
 	}
 
 	.modal-content {
