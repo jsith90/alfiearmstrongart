@@ -2,7 +2,7 @@
 {% block content %}
 <main>
   <div class="gallery-page">
-  <div class="gallery-title  fade-in">
+  <div class="gallery-title from-bottom slide-in">
     <h1>{{ gallery.title }}</h1>
     {% if gallery.description %}
       <p  fade-in>{{ gallery.description }}.</p>
@@ -12,7 +12,7 @@
   </div> 
   <div class="gallery-position"> 
     {% for image in images %}
-      <div class="gallery-image fade-in">
+      <div class="gallery-image fade-in from-bottom slide-in">
         {% if image.caption %}
           <img src="{{ image.image.url }}" class="img-fluid modal-img" alt="{{ image.caption }}">
           <p class="caption">{{ image.caption }}</p>

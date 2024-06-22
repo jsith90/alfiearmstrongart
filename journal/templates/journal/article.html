@@ -4,49 +4,49 @@
 {% block content %}
 <main>
   <div class="article-page">
-    <div class="gallery-title  fade-in">
-      <h1>{{ article.title }}</h1>
+    <div class="gallery-title from-bottom slide-in">
+      <h1 class="gallery-title from-bottom slide-in">{{ article.title }}</h1>
       <pre>{{ article.date }}</pre>
     </div>
-    <hr class="article-hr">
+    <hr class="article-hr from-bottom slide-in">
     {% if article.image1 %}
-    <div class="article-image  fade-in">
+    <div class="article-image from-bottom slide-in">
       <img src="{{ article.image1.url }}" class="img-fluid modal-img" alt="{{ article.caption1 }}">
       {% if article.caption1 %}
       <p class="article-caption">{{ article.caption1 }}</p>
       {% endif %}
     </div>
-    <hr class="article-hr">
+    <hr class="article-hr from-bottom slide-in">
     {% else %}
     <div></div>
     {% endif %}  
     {% if article.body %}
-    <div class="body-ps fade-in">
+    <div class="body-ps from-bottom slide-in">
     <p>{{ article.body|linebreaks }}</p>
     </div>
-    <hr class="article-hr">
+    <hr class="article-hr slide-in">
     {% else %}
       <div></div>
     {% endif %}
-    <div class="thumbnails row fade-in">
+    <div class="thumbnails row from-bottom slide-in">
       {% if article.image2 %}
       <div class="column">
-        <img class="cursor modal-img" src="{{ article.image2.url }}" style="width:100%" alt="{{ article.caption2 }}">
+        <img class="cursor modal-img from-bottom slide-in" src="{{ article.image2.url }}" style="width:100%" alt="{{ article.caption2 }}">
         {% if article.caption2 %}
-        <p class="article-caption">{{ article.caption2 }}</p>
+        <p class="article-caption from-bottom slide-in">{{ article.caption2 }}</p>
         {% endif %}
       </div>
       {% endif %}
       {% if article.image3 %}
       <div class="column">
-        <img class="cursor modal-img" src="{{ article.image3.url }}" style="width:100%" alt="{{ article.caption3 }}">
-        <p class="article-caption">{{ article.caption3 }}</p>
+        <img class="cursor modal-img from-bottom slide-in" src="{{ article.image3.url }}" style="width:100%" alt="{{ article.caption3 }}">
+        <p class="article-caption from-bottom slide-in">{{ article.caption3 }}</p>
       </div>
       {% endif %}
       {% if article.image4 %}
       <div class="column">
-        <img class="cursor modal-img" src="{{ article.image4.url }}" style="width:100%" alt="{{ article.caption4 }}">
-        <p class="article-caption">{{ article.caption4 }}</p>
+        <img class="cursor modal-img from-bottom slide-in" src="{{ article.image4.url }}" style="width:100%" alt="{{ article.caption4 }}">
+        <p class="article-caption from-bottom slide-in">{{ article.caption4 }}</p>
       </div>
       {% endif %}
     </div>

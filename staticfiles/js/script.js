@@ -33,10 +33,15 @@ navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
 });
 
+// fader on scroll
+
 const faders = document.querySelectorAll('.fade-in');
+
+const sliders = document.querySelectorAll('.slide-in');
+
 const appearOptions = {
-  threshold: 0.54,
-  rootMargin: "0% 0% 68% 0%"
+  threshold: 0,
+  rootMargin: "0px 0px -100px 0px"
 }
 
 
@@ -51,9 +56,9 @@ const appearsOnScroll = new IntersectionObserver(function(entries, observer) {
   })
 }, appearOptions);
 
-faders.forEach(fader => {
-  appearsOnScroll.observe(fader);
-}); 
+sliders.forEach(slider => {
+  appearsOnScroll.observe(slider);
+})
 
 // gallery pages
 
