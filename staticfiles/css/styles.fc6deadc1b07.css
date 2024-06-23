@@ -218,7 +218,7 @@ a:hover, .dropdown:hover .dropbtn {
 }
 
 .home {
-	background-image: url('/static/assets/dragon.jpeg');
+	background-image: url("/static/assets/dragon.1b70d0f648b1.jpeg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -744,7 +744,7 @@ a:hover, .dropdown:hover .dropbtn {
 	position: relative;
 	bottom: 0;
 	width: 100%;
-/*	background-image: url('/static/assets/dragon-footer.jpeg');
+/*	background-image: url("/static/assets/dragon-footer.95f46cdfc51e.jpeg");
 	background-position-y: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;

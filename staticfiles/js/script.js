@@ -31,6 +31,7 @@ navToggle.addEventListener("click", function () {
   //   links.classList.add("show-links");
   // }
   links.classList.toggle("show-links");
+  navToggle.classList.toggle("active-case")
 });
 
 // fader on scroll
