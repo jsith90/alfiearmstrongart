@@ -775,11 +775,11 @@ a:hover, .dropdown:hover .dropbtn {
 
 @media only screen and (max-width: 1400px) {
 	a:hover {
-		transition: all 0.1s;
+		transition: all 0s;
 	}
 
 	.dropdown-content .drop-list:hover {
-		transition: all 0.1s;
+		transition: all 0s;
 	}
 
 
@@ -963,6 +963,9 @@ a:hover, .dropdown:hover .dropbtn {
 		transform: translateY(-445px);
 	}
 
+	#nav-content div {
+	width: 80px;
+	}
 
 	.nav-links{
 		flex-direction: column;
@@ -1038,6 +1041,11 @@ a:hover, .dropdown:hover .dropbtn {
 		font-size: 1.2rem;
 		margin-bottom: 10px;
 	}
+
+	#nav-content div {
+	width: 50px;
+	}
+
 
 	.gallery-title p {
 		font-size: 0.8rem;
