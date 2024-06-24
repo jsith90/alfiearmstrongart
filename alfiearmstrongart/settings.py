@@ -35,8 +35,8 @@ SECRET_KEY = os.environ['SECRET_KEY_YO']
 DEBUG = int(os.environ.get("DEBUG", default=0))
 print(f"DEBUG (after conversion): {DEBUG}")
 
-ALLOWED_HOSTS = ['alfiearmstrongart-production.up.railway.app', 'https://alfiearmstrongart-production.up.railway.app', 'localhost', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://alfiearmstrongart-production.up.railway.app']
+ALLOWED_HOSTS = ['www.alfie-armstrong-art.co.uk', 'https://www.alfie-armstrong-art.co.uk', 'alfiearmstrongart-production.up.railway.app', 'https://alfiearmstrongart-production.up.railway.app', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://www.alfie-armstrong-art.co.uk', 'https://alfiearmstrongart-production.up.railway.app']
 
 # Application definition
 
