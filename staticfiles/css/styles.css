@@ -1086,15 +1086,17 @@ a:hover, .dropdown:hover .dropbtn {
    	margin: 90px 15px 50px 15px;
   }
 
+  .add-commission-images .image-input-display {
+  	width: 80%;
+  }
+
 }
 
 @media only screen and (max-width: 386px) {
 	#logo {
 		font-size: 1rem;
 	}	
-
 	
-
 	.about-text {
 		font-size: 0.8rem;
 	}
